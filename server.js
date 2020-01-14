@@ -5,11 +5,11 @@ const bodyParser = require('body-parser');
 const { ENV, URL, PORT, MONGODB_URI } = require('./config');
 
 
-//app.set('port', process.env.PORT || 3000);
+// Setting Port, View Engine 
+app.set('port', process.env.PORT || 3000);
 app.set("view engine", "ejs");
-app.set("views", resolve(__dirname, "views"));
-//static files
-app.use(express.static(path.join(__dirname, 'public')));
+// Setting Location "views" for EJS 
+app.set("views", path.resolve(__dirname, "views"));
 
 
 //import { connect } from 'mongoose';
