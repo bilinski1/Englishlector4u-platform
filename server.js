@@ -10,11 +10,11 @@ const ejs = require('ejs');
 // Setting Port, View Engine 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'views'));
 
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index')
 });
 
 //import { connect } from 'mongoose';
