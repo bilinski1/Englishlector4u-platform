@@ -17,11 +17,10 @@ app.set('views', path.join(__dirname, '../views'));
 //app.listen(config.PORT, () => {
   //connect(MONGODB_URI, { useNewUrlParser: true}, {useMongoClient: true})
 //});
-
+app.listen(port, () => {
+  console.log("Server running on port 3000 or online ;)");
+   });
 app.get('/', function (req, res) {
   res.render('index')
 });
 
-//app.listen(port, () => {
-  //console.log("Server running on port 3000 or online ;)");
- //});
