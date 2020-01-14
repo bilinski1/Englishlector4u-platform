@@ -1,6 +1,6 @@
 const express = 'express';
 const { resolve } = 'path';
-const { PORT, MONGODB_URI } = './config';
+const { ENV, URL, PORT, MONGODB_URI } = './config';
 const bodyParser = 'body-parser';
 const app = express();
 //app set
