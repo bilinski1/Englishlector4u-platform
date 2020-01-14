@@ -1,20 +1,16 @@
-import express from 'express';
-//import { resolve } from 'path';
-import { PORT, MONGODB_URI } from './config';
-import bodyParser from 'body-parser';
+const express = 'express';
+const { resolve } = 'path';
+const { PORT, MONGODB_URI } = './config';
+const bodyParser = 'body-parser';
 const app = express();
-// Setting Port, View Engine 
-//app.set('port', process.env.PORT || 3000);
+//app set
+app.set('port', process.env.PORT || 3000);
 app.set("view engine", "ejs");
 app.set("views", resolve(__dirname, "views"));
-// Setting up database mongoose, mongoDB
-import { connect } from 'mongoose';
-// Conncecting to database
-app.listen(PORT, () => {
-  connect(MONGODB_URI, { useNewUrlParser: true}, {useMongoClient: true})
-});
+//import { connect } from 'mongoose';
 app.get('/', function (req, res) {
-    res.render('index');
-  })
-//app.listen(port, () => {
-
+    res.render('index')
+  });
+  app.listen(PORT, () => {
+    connect(MONGODB_URI, { useNewUrlParser: true}, {useMongoClient: true})
+  });
