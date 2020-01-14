@@ -1,13 +1,13 @@
-const express = require('express');
-const path = require('path');
-const config = require('./config');
-const bodyParser = require('body-parser');
+import express from 'express';
+import { resolve } from 'path';
+import { PORT, MONGODB_URI } from './config';
+import bodyParser from 'body-parser';
 const app = express();
 // Setting up database mongoose, mongoDB
-const mongoose = require('mongoose');
+import { connect } from 'mongoose';
 // Conncecting to database
-server.listen(config.PORT, () => {
-  mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true}, {useMongoClient: true},
+app.listen(PORT, () => {
+  connect(MONGODB_URI, { useNewUrlParser: true}, {useMongoClient: true},
     );
   console.log("Server running on port 3000 or online ;)");
 });
@@ -15,7 +15,7 @@ server.listen(config.PORT, () => {
 app.set('port', process.env.PORT || 3000);
 app.set("view engine", "ejs");
 // Setting Location "views" for EJS 
-app.set("views", path.resolve(__dirname, "views"));
+app.set("views", resolve(__dirname, "views"));
 app.get('/', function (req, res) {
     res.render('index');
   })
