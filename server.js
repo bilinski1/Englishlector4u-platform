@@ -13,6 +13,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 
 
+app.get('/', (req, res) => {
+  res.render('index');
+});
 
 //import { connect } from 'mongoose';
 //app.listen(config.PORT, () => {
@@ -21,7 +24,4 @@ app.set('views', path.join(__dirname, '../views'));
 app.listen(port, () => {
   console.log("Server running on port 3000 or online ;)");
    });
-app.get('/', function (req, res) {
-  res.render('index')
-});
 
