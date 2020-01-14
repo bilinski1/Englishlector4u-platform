@@ -3,12 +3,13 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const ejs = require('ejs');
 //const { ENV, URL, PORT, MONGODB_URI } = require('config');
 
 
 // Setting Port, View Engine 
 app.set('port', process.env.PORT || 3000);
-app.set("view engine", "ejs");
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 
 
