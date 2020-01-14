@@ -19,7 +19,6 @@ app.get('/', (req, res) => {
 });
 
 
-
 app.listen(config.PORT, () => {
 connect(MONGODB_URI, { useNewUrlParser: true}, {useMongoClient: true});
 });
