@@ -12,7 +12,7 @@ server.listen(config.PORT, () => {
   console.log("Server running on port 3000 or online ;)");
 });
 // Setting Port, View Engine 
-//app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3000);
 app.set("view engine", "ejs");
 // Setting Location "views" for EJS 
 app.set("views", path.resolve(__dirname, "views"));
