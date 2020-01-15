@@ -13,6 +13,13 @@ app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Database Connection
+mongoose.connect('mongodb+srv://el4u:bilisw362@el4u-fc1rw.gcp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+});
 
 // First respond - index
 app.get('/', (req, res) => {
