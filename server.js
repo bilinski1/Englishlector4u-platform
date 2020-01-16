@@ -1,11 +1,11 @@
 // Importing modules
-const port = process.env.PORT || 3000;
-const express = require('express');
+const port = process.env.PORT || 3000; // set up port
+const express = require('express'); //a web framework for routing
 const app = express();
-const path = require('path');
-const bodyParser = require('body-parser');
-const ejs = require('ejs');
-const mongoose = require('mongoose');
+const path = require('path'); // a routing tool for directories
+const bodyParser = require('body-parser'); //a parsing tool for request data
+const ejs = require('ejs'); // Embedded JavaScript templates
+const mongoose = require('mongoose'); //a Object Relational Modelling tool
 
 
 // Setting Port, View Engine 
@@ -16,11 +16,11 @@ app.set('views', path.join(__dirname, 'views'));
 // Database Connection
 const db = process.env.MONGODB_URL;
 mongoose.connect('mongodb+srv://el4u:bilisw362@el4u-fc1rw.gcp.mongodb.net/test?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true});
-//var db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'connection error:'));
-//db.once('open', function() {
+var dbc = mongoose.connection;
+dbc.on('error', console.error.bind(console, 'connection error:'));
+dbc.once('open', function() {
 // we're connected!
-//});
+});
 
 // First respond - index
 app.get('/', (req, res) => {
