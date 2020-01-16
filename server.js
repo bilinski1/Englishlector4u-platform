@@ -17,9 +17,9 @@ app.set('views', path.join(__dirname, 'views'));
 const db = process.env.MONGODB_URL;
 mongoose.connect('mongodb+srv://el4u:bilisw362@el4u-fc1rw.gcp.mongodb.net/test?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true});
 var dbc = mongoose.connection;
-dbc.on('error', console.error.bind(console, 'connection error:'));
+dbc.on('error', console.error.bind(console, 'upsy connection error:'));
 dbc.once('open', function() {
-  console.log("connected to db ;)")
+  console.log("CONNECTED TO DB ;)")
 });
 
 // First respond - index
@@ -29,6 +29,6 @@ app.get('/', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log("Server running on port 3000 or online ;)");
+  console.log("Great! Server running on port 3000 or online ;)");
    });
 
