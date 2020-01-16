@@ -19,8 +19,8 @@ mongoose.connect('mongodb+srv://el4u:bilisw362@el4u-fc1rw.gcp.mongodb.net/test?r
 //var db = mongoose.connection;
 //db.on('error', console.error.bind(console, 'connection error:'));
 //db.once('open', function() {
-  // we're connected!
-});
+// we're connected!
+//});
 
 // First respond - index
 app.get('/', (req, res) => {
