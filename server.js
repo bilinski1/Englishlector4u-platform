@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://el4u:bilisw362@el4u-fc1rw.gcp.mongodb.net/test?r
 var dbc = mongoose.connection;
 dbc.on('error', console.error.bind(console, 'connection error:'));
 dbc.once('open', function() {
-  console.log(nameString("connected to db ;)"));
+  "connected to db ;)"
 });
 
 // First respond - index
